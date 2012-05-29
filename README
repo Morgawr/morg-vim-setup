@@ -1,0 +1,8 @@
+This is just a collection of files of my own personal setup with
+the editor vim. It also has a simple script to install everything.
+
+To install these settings, just run:
+./install_sh
+
+Be sure to backup your .vimrc and all the content in your
+~/.vim directory!
