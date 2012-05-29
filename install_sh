@@ -27,6 +27,13 @@ select opt in $options; do
 		cp -v guicolorscheme.vim ~/.vim/plugin/
 		cp -v NERD_tree.vim ~/.vim/plugin/
 
+		if [[ ! -d ~/.vim/syntax ]]; then
+			#we need to create ~/.vim/syntax
+			mkdir -v ~/.vim/syntax
+		fi
+
+		cp -v nerdtree.vim ~/.vim/syntax/
+
 		if [[ ! -d ~/.vim/colors ]]; then
 			#we need to create ~/.vim/colors
 			mkdir -v ~/.vim/colors
