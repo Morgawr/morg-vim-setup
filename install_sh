@@ -1,0 +1,45 @@
+#!/bin/bash
+
+echo "You are going to install some vim custom settings."
+echo "BE CAREFUL! Always backup your ~/.vimrc and ~/.vim folder if you want to keep your old settings."
+echo "This script is going to alter and replace some files you may already have."
+echo "Do you wish to continue?"
+options="yes no"
+select opt in $options; do
+
+	if [[ "$opt" == "yes" ]]; then
+		#Saving all the files in their respective places
+
+		cp -v vimrc ~/.vimrc
+
+		if [[ ! -d ~/.vim ]]; then
+			#we need to create ~/.vim folder
+			mkdir -v ~/.vim
+		fi
+
+		cp -vR nerdtree_plugin ~/.vim/
+
+		if [[ ! -d ~/.vim/plugin ]]; then
+			#we need to create ~/.vim/plugin
+			mkdir -v ~/.vim/plugin
+		fi
+
+		cp -v guicolorscheme.vim ~/.vim/plugin/
+		cp -v NERD_tree.vim ~/.vim/plugin/
+
+		if [[ ! -d ~/.vim/colors ]]; then
+			#we need to create ~/.vim/colors
+			mkdir -v ~/.vim/colors
+		fi
+
+		cp -v molokai.vim ~/.vim/colors/
+
+		echo "All done."
+		echo "Run vim to test the new settings"
+	fi
+	if [[ "$opt" == "no" ]]; then
+		exit
+	else
+		echo "Not a correct choice"
+	fi
+done
