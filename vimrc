@@ -19,7 +19,7 @@ nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
 
 " map ctrl+n to hide/show NERDTree
-nmap <silent> <C-n> :NERDTreeToggle<CR>
+nmap <silent> <C-n> :NERDTreeToggle<CR> :wincmd r<CR>
 
 " map ctrl+a to select all
 nmap <silent> <C-a> ggVG
